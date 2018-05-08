@@ -14,6 +14,7 @@ import {AddWorkoutPage} from "../pages/add-workout/add-workout";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {WorkoutDetailsPage} from "../pages/workout-details/workout-details";
 
 
 
@@ -25,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     WorkoutsPage,
-    AddWorkoutPage
+    AddWorkoutPage,
+    WorkoutDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WorkoutsPage,
     AddWorkoutPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    WorkoutDetailsPage
 
   ],
   providers: [
