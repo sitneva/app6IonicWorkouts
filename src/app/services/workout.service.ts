@@ -1,6 +1,9 @@
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {map} from "rxjs/operators";
+//import {map} from "rxjs/operators";
+import {Headers, RequestOptions} from '@angular/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable()
 export class WorkoutService{
@@ -17,5 +20,15 @@ export class WorkoutService{
 
   getWorkouts() {
     return this.http.get(this.workoutUrl+`?apiKey=`+this.apiKey);
+  }
+
+  addWorkout(workout) {
+    //let body = JSON.stringify(workout);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(this.workoutUrl+`?apiKey=`+this.apiKey, workout, options)
+
+
   }
 }
