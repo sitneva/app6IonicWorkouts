@@ -15,8 +15,11 @@
       <p><strong>Type: </strong> {{workout.type}}</p>
       <hr>
       {{workout.note}}
-      <br><br><br>
+      <br>
+      <button ion-button type="button" class="btn-danger" (click)="removeWorkout(workout._id.$oid)">Delete workout</button>
+      <br>
     </ion-card-content>
+
   </ion-card>
 
 </ion-content>
